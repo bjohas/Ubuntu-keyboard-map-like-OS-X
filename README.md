@@ -62,7 +62,11 @@ This changes the layout to
     super FN alt hyper SPACE ctrl hyper
 Compared to the above map, it swaps ctrl and hyper (Note: Not quite for the xmodmap, but close enough, see comments below. Nonte also that I'm undecided about not swapping the keys to the right of SPACE, or maybe placing an alt key there. There are advantages/disadvantages to that.)
 
-The above keyboard layout is that one that I'm used to for the OS-X-terminal, and I can now bind the hyper key to other OS-X-type functions that I might want: Chiefly x/c/v for copy/cut/paste, as well as e.g. t for new tab in terminal. If you use (x)emacs, the bindings will also work. See separate page on autokey on how to do this.
+The above keyboard layout is that one that I'm used to for the OS-X-terminal, and I can now bind the hyper key to other OS-X-type functions that I might want: Chiefly 
+ - x/c/v for copy/cut/paste (via autokey, so that it works in xemacs too), as well as e.g. 
+ - t/n/w for new tab / new window / close window in gnome terminal (using the gnome terminal settings). 
+ 
+ If you use (x)emacs, the bindings will also work. See separate page on autokey on how to do this.
 
 ## Switching between the two
 
