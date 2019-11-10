@@ -2,11 +2,30 @@
 
 When switching from OS X to the Ubuntu desktop, you're essentially moving from a three-modifier system (command/alt/ctrl) to a two modifier system (ctrl/alt). 
 
-## Setting up the Ubuntu-desktop shortcuts so that they work like OS X
+## Overall keyboard shortcuts: gsettings
+
+Many keyboard shortcuts can be configured via Settings and more settings can be controlled by the gnome tweaks tool. It's a good idea to go through the list in the Settings application (keyboard section) and look at the available keys. Super-L/R/U/D are very helpful (and require an extension on OS X). Screenshot keyboard shortcuts can be set here too.
+
+However, this doesn't have all keyboard shortcuts. You can list all settings via gsettings, see gsettings-show.pl in this repo. In particular, the emoji key (set to ctrl+shift+e which conflices with Google Docs) took a bit of tracking down: 
+
+    gsettings-show.pl  | grep emoji
+
+(self-answered question here: https://unix.stackexchange.com/questions/534044/which-system-files-configure-global-keyboard-shortcuts/551458; also here https://unix.stackexchange.com/questions/532481/how-do-you-change-systems-wide-keyboard-short-cuts-on-the-commandline-e-g-shi).
+
+However, there's a bunch of muscle memory invested in other keyboard shortcuts.
+
+## Sorting out non-modifier keys (a UK specific problem)
+
+The UK-Mac keyboard is basically a US keyboard with extra keys, so (as I'm touch typing), I've loaded the US keyboard in Ubuntu. This means you have your usual keys (bar some deliberation over £ vs. #). The next change is to place the ctrl key next to space: There are options available in Gnome Tweaks. For the desktop, this means that the Ubuntu desktop works pretty much like the OS X desktop, as long as you don't need to use OS-X-Ctrl and your not in the Ubuntu Terminal.
+
+
+## Setting up the Ubuntu-desktop modifer keys so that they work like OS X
 
 For me, it was quite natural to move the Ubuntu-control key next to the spacebar, as it then essentially works the same as the OS-X-command key (next to the spacebar). I.e., things like copy/cut/paste as well as new tab etc work without retraining muscle memory.
 
-The UK-Mac keyboard is basically a US keyboard with extra keys, so (as I'm touch typing), I've also loaded the US keyboard. For the desktop, this means that the Ubuntu desktop works pretty much like the OS X desktop, bar the OS-X-ctrl key, which for many OS-X-applications works like the Terminal ctrl key. However, clearly this doesn't work in Ubuntu. (Strange to think that OS X has a consistent set of keybindings across desktop and terminal, while Ubuntu doesn't.) The way to fix this is to use the Ubuntu-Hyper key, which doesn't seem to be widely used. By placing the Ubuntu-Hyper key where you expect your OS-X-ctrl key, you can then create additional functions (e.g., in autokey) that emulate the OS-X-Desktop behaviour.
+I started to explore this "OS X to Ubuntu while preserving muscle memory" quest on the forums, but without much luck (self-answere questions: https://askubuntu.com/questions/1150482/ubuntu-desktop-with-bash-keyboard-shortcuts/1187814, https://askubuntu.com/questions/1160090/xmodmap-and-keyboard-shortcuts-how-does-the-system-work-19-04-xorg). It seems kinda obvious to me that people might move from OS X to Ubuntu or vice versa.
+
+So, how far can we get with this? As just noted, placing the Ubuntu-Ctrl key next to space helps. However, the OS-X-ctrl key works - for many OS-X-applications - works like the Ubuntu-terminal ctrl key. However, clearly this doesn't work on the Ubuntu desktop. (Strange to think that OS X has a consistent set of keybindings across desktop and terminal, while Ubuntu doesn't.) The way to fix this is to use the Ubuntu-Hyper key, which doesn't seem to be widely used. By placing the Ubuntu-Hyper key where you expect your OS-X-ctrl key, you can then create additional functions (e.g., in autokey) that emulate the OS-X-Desktop behaviour.
 
 In this repo, try
     Xmodmap xmodmap_desktop
@@ -51,7 +70,7 @@ So now you have two maps. How do you switch between them?
 
 ### Approach 1: XmodmapFollow with xmodmap
 
-The file XmodmapFollow in this repo uses xdotool to detect window changes, and then uses the xmodmaps above to change layout. Turns out that this is very slow. Plus it inherits the bugs of xdotool, so it's really not very stable.
+The file XmodmapFollow in this repo uses xdotool to detect window changes, and then uses the xmodmaps above to change layout. Turns out that this is very slow. Plus it inherits the bugs of xdotool, so it's really not very stable. (Self-answered question related to this: https://unix.stackexchange.com/questions/535033/executing-command-when-application-comes-to-the-foreground-ubuntu-19-04-x11.)
 
 ### Approach 2: Finding another terminal programme 
 
