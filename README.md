@@ -23,7 +23,7 @@ The UK-Mac keyboard is basically a US keyboard with extra keys, so (as I'm touch
 
 For me, it was quite natural to move the Ubuntu-control key next to the spacebar, as it then essentially works the same as the OS-X-command key (next to the spacebar). I.e., things like copy/cut/paste as well as new tab etc work without retraining muscle memory.
 
-I started to explore this "OS X to Ubuntu while preserving muscle memory" quest on the forums, but without much luck (self-answere questions: https://askubuntu.com/questions/1150482/ubuntu-desktop-with-bash-keyboard-shortcuts/1187814, https://askubuntu.com/questions/1160090/xmodmap-and-keyboard-shortcuts-how-does-the-system-work-19-04-xorg). It seems kinda obvious to me that people might move from OS X to Ubuntu or vice versa.
+I started to explore this "OS X to Ubuntu while preserving muscle memory" quest on the forums, but without much luck (self-answere questions: https://askubuntu.com/questions/1150482/ubuntu-desktop-with-bash-keyboard-shortcuts/1187814, https://askubuntu.com/questions/1160090/xmodmap-and-keyboard-shortcuts-how-does-the-system-work-19-04-xorg). It seems kinda obvious to me that people might move from OS X to Ubuntu or vice versa. Or that one would want to get a consistent use of the Ctrl key across Ubuntu. However, this was difficult to find (as the many posts show).
 
 So, how far can we get with this? As just noted, placing the Ubuntu-Ctrl key next to space helps. However, the OS-X-ctrl key works - for many OS-X-applications - works like the Ubuntu-terminal ctrl key. However, clearly this doesn't work on the Ubuntu desktop. (Strange to think that OS X has a consistent set of keybindings across desktop and terminal, while Ubuntu doesn't.) The way to fix this is to use the Ubuntu-Hyper key, which doesn't seem to be widely used. By placing the Ubuntu-Hyper key where you expect your OS-X-ctrl key, you can then create additional functions (e.g., in autokey) that emulate the OS-X-Desktop behaviour.
 
@@ -80,7 +80,9 @@ I then searched for a terminal programme that had the ability to remap modifier 
 
 I then found that the settings (under languages) allows for different layouts per window. This requires xkb. So I developed the xkb files that are in this repo. I initially posed that as a question (here: https://askubuntu.com/questions/1187610/reassigning-modifier-keys-with-xkb/1187783) but also contacted a number of people on github that had done xkb work, and thus arrived at the files here (with some input from @repolho).  
 
-The problem now is that while the maps work with setxkbmap, with the GUI they don't (https://askubuntu.com/questions/1187790/xkbmap-works-with-setxkbmap-but-not-in-gui, also see https://askubuntu.com/questions/1187782/why-set-setxkbdmap-work-differently-from-the-gui-keyboard-map-switcher-super-sp). I hope that I can get this resolved.
+The problem now is that while the maps work with setxkbmap, with the GUI they don't (https://askubuntu.com/questions/1187790/xkbmap-works-with-setxkbmap-but-not-in-gui, also see https://askubuntu.com/questions/1187782/why-set-setxkbdmap-work-differently-from-the-gui-keyboard-map-switcher-super-sp). 
+
+I hope that I can get this resolved via the above posts... 
 
 ### Appraoch 4: XmodmapFollow with setxkbmap
 
