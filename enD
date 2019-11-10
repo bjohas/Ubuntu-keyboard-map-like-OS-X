@@ -1,0 +1,22 @@
+partial alphanumeric_keys modifier_keys
+xkb_symbols "basic" {
+
+    include "us(basic)"
+    name[Group1]= "enHT (English, US, Hyper-Terminal)";
+
+    key <LSGT> { [     grave,    asciitilde      ]     };
+
+    key <CAPS> { [ Hyper_L, Hyper_L ] };
+    // shift
+    replace key <LCTL> { [ Super_L ] };
+    replace key <LWIN> { [ Alt_L, Meta_L ] };
+    replace key <LALT> { [ Control_L, Control_L ] };
+    // space
+    replace key <RALT> { [ Control_R, Control_R ] };
+    replace key <RCTL> { [ Hyper_R, Hyper_R ] };
+    // Modifiers  
+    modifier_map Mod1    { <LWIN> };
+    modifier_map Mod4    { <LCTL> };
+    modifier_map Mod5    { <CAPS>, <RCTL> };
+    modifier_map Control { <LALT>, <RALT> };
+};
