@@ -31,9 +31,9 @@ In this repo, try
     Xmodmap xmodmap_desktop
 or
     setxkbmap enD
-(The latter command requires copying of the enD/enT files to /usr/share/X11/xkb/symbols.)
+(The latter command requires copying of the enD/enT files to /usr/share/X11/xkb/symbols. Note that as of the time of writing - 2019-11-10 - it seems that xkb cannot work of a local directory.)
 
-This moves the layout from
+The above commands change the layout from
     caps
     SHIFT
     ctrl FN windows Alt SPACE AltGr ctrl
@@ -41,9 +41,9 @@ to
     hyper
     SHIFT
     super FN alt ctrl SPACE ctrl hyper
-(Note: Not quite for the xmodmap, but close enough, see comments below.)
+The keys that haven't changed are in caps. (Note: Not quite for the xmodmap, but close enough, see comments below.) 
     
-If you then bind the hyper-a/e/d/k etc to beginning/end of line, delete char, cut to end of line (e.g. using autokey) you have an OS-X-desktop like binding.
+If you then bind the hyper-a/e/d/k etc to beginning/end of line, delete char, cut to end of line (e.g. using autokey) you have an OS-X-desktop like binding.  See separate page on autokey on how to do this.
 
 (Of course you can reorder the keys as you like - in OS X I've had the ctrl/caps key swapped forever.)
 
@@ -60,9 +60,9 @@ This changes the layout to
     ctrl
     SHIFT
     super FN alt hyper SPACE ctrl hyper
-(Note: Not quite for the xmodmap, but close enough, see comments below.)
+Compared to the above map, it swaps ctrl and hyper (Note: Not quite for the xmodmap, but close enough, see comments below. Nonte also that I'm undecided about not swapping the keys to the right of SPACE, or maybe placing an alt key there. There are advantages/disadvantages to that.)
 
-This is the keyboard I'm used to for the OS-X-terminal, and I can now bind the hyper key to other functions that I mind want: Chiefly x/c/v for copy/cut/paste, as well as e.g. t for new tab in terminal. If you use xemacs, the bindings will also work.
+The above keyboard layout is that one that I'm used to for the OS-X-terminal, and I can now bind the hyper key to other OS-X-type functions that I might want: Chiefly x/c/v for copy/cut/paste, as well as e.g. t for new tab in terminal. If you use (x)emacs, the bindings will also work. See separate page on autokey on how to do this.
 
 ## Switching between the two
 
