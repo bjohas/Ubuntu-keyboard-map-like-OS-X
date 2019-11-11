@@ -2,6 +2,10 @@
 
 When switching from OS X to the Ubuntu desktop, you're essentially moving from a three-modifier system (command/alt/ctrl) to a two modifier system (ctrl/alt). 
 
+## Operating system and window manager
+
+These notes here were developed for Ubuntu 19.04, which uses gnome as the default desktop manager. Previous versions of ubuntu used other desktop managers, and some of these notes will not be applicable.
+
 ## Overall keyboard shortcuts: gsettings
 
 Many keyboard shortcuts can be configured via Settings and more settings can be controlled by the gnome tweaks tool. It's a good idea to go through the list in the Settings application (keyboard section) and look at the available keys. Super-L/R/U/D are very helpful (and require an extension on OS X). Screenshot keyboard shortcuts can be set here too.
