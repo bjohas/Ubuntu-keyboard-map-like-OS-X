@@ -1,4 +1,4 @@
-# Ubuntu-keyboard-map-like-OS-X
+# Ubuntu keyboard map like OS X
 
 When switching from OS X to the Ubuntu desktop, you're essentially moving from a three-modifier system (command/alt/ctrl) to a two modifier system (ctrl/alt). 
 
