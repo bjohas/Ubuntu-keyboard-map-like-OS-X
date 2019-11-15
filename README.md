@@ -90,7 +90,7 @@ I then found that the settings (under languages) allows for different layouts pe
 
 The problem now is that while the maps work with setxkbmap, with the GUI they don't (https://askubuntu.com/questions/1187790/xkbmap-works-with-setxkbmap-but-not-in-gui, also see https://askubuntu.com/questions/1187782/why-set-setxkbdmap-work-differently-from-the-gui-keyboard-map-switcher-super-sp). 
 
-- https://gitlab.gnome.org/GNOME/gnome-control-center/issues/777
+- https://gitlab.gnome.org/GNOME/gnome-control-center/issues/782
 - https://gitlab.gnome.org/GNOME/gnome-control-center/issues/778
 
 I hope that I can get this resolved via the above posts... 
