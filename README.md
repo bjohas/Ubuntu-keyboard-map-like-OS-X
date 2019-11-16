@@ -86,14 +86,20 @@ I then searched for a terminal programme that had the ability to remap modifier 
 
 ### Approach 3: Use the GUI settings
 
-I then found that the settings (under languages) allows for different layouts per window. This requires xkb. So I developed the xkb files that are in this repo. I initially posed that as a question (here: https://askubuntu.com/questions/1187610/reassigning-modifier-keys-with-xkb/1187783) but also contacted a number of people on github that had done xkb work, and thus arrived at the files here (with some input from @repolho).  
+I then found that the settings (under languages) allows for different layouts per window. This requires xkb. So I developed the xkb files that are in this repo. I initially posed that as a question (here: https://askubuntu.com/questions/1187610/reassigning-modifier-keys-with-xkb/1187783) but also contacted a number of people on github that had done xkb work, and thus arrived at the files here (with some input from @repolho). The problem now is that while the maps work with setxkbmap, with the GUI they don't. 
 
-The problem now is that while the maps work with setxkbmap, with the GUI they don't (https://askubuntu.com/questions/1187790/xkbmap-works-with-setxkbmap-but-not-in-gui, also see https://askubuntu.com/questions/1187782/why-set-setxkbdmap-work-differently-from-the-gui-keyboard-map-switcher-super-sp). 
+Here are the two issues posted on various forums:
 
-- https://gitlab.gnome.org/GNOME/gnome-control-center/issues/782
-- https://gitlab.gnome.org/GNOME/gnome-control-center/issues/778
+- Keyboard-map related issue: hyper key not working in gsettings for “org.gnome.desktop.wm.keybindings *window/app*”
+-- https://discourse.gnome.org/t/keyboard-map-related-issue-hyper-key-not-working-in-gsettings-for-org-gnome-desktop-wm-keybindings-window-app/2129
+-- https://gitlab.gnome.org/GNOME/gnome-control-center/issues/778
+-- https://askubuntu.com/questions/1187790/xkbmap-works-with-setxkbmap-but-not-in-gui
+- Keyboard-map related issue 2: Interaction between input sources switching (“Language and Region”) and setxbkmap
+-- https://discourse.gnome.org/t/keyboard-map-related-issue-2-interaction-between-input-sources-switching-language-and-region-and-setxbkmap/2130
+-- https://gitlab.gnome.org/GNOME/gnome-control-center/issues/782
+-- https://askubuntu.com/questions/1187782/why-set-setxkbdmap-work-differently-from-the-gui-keyboard-map-switcher-super-sp
 
-I hope that I can get this resolved via the above posts... 
+I've also asked via IRC. I hope that I can get this resolved via the above posts/irc... 
 
 ### Appraoch 4: XmodmapFollow with setxkbmap
 
