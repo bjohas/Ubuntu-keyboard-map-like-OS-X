@@ -80,6 +80,12 @@ So now you have two maps. How do you switch between them?
 
 The file XmodmapFollow in this repo uses xdotool to detect window changes, and then uses the xmodmaps above to change layout. Turns out that this is very slow. Plus it inherits the bugs of xdotool, so it's really not very stable. (Self-answered question related to this: https://unix.stackexchange.com/questions/535033/executing-command-when-application-comes-to-the-foreground-ubuntu-19-04-x11.)
 
+If you want to try this approach, see 
+ - XmodmapFollow.pl here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/scripts/XmodmapFollow.pl  
+ - and the two Xmodmap files below: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/tree/master/maps/XmodmapFollow%20with%20xmodmap 
+ 
+However, Approach 4 below is much quicker and more reliable.
+
 ### Approach 2: Finding another terminal programme 
 
 I then searched for a terminal programme that had the ability to remap modifier keys (see https://unix.stackexchange.com/questions/549222/replacement-for-terminal-tilda-guake-terminator-but-with-modifier-key-r). That didn't lead to anything. uxrvt has a perl extension, that maybe would have made that possible.
@@ -105,4 +111,10 @@ I've also asked via IRC. I hope that I can get this resolved via the above posts
 ### Appraoch 4: XmodmapFollow with setxkbmap
 
 As setxkbmap is much faster in applying new keyboard maps than xmodmap, I've put setxkbmap into XmodmapFollow. At least the keyboard switching is faster now, despite the bugs of xdotool.
+
+If you want to try this approach, see 
+ - XmodmapFollow.pl here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/scripts/XmodmapFollow.pl  
+ - and the enD/enT files here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/tree/master/maps/
+ 
+This is much quicker and more reliable than Approach 1.
 
