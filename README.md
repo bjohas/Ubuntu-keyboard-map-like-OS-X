@@ -97,11 +97,13 @@ I then found that the settings (under languages) allows for different layouts pe
 Here are the two issues posted on various forums:
 
 Keyboard-map related issue: hyper key not working in gsettings for “org.gnome.desktop.wm.keybindings *window/app*”
+ - https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/issues/186
  - https://discourse.gnome.org/t/keyboard-map-related-issue-hyper-key-not-working-in-gsettings-for-org-gnome-desktop-wm-keybindings-window-app/2129
  - https://gitlab.gnome.org/GNOME/gnome-control-center/issues/778
  - https://askubuntu.com/questions/1187790/xkbmap-works-with-setxkbmap-but-not-in-gui
 
 Keyboard-map related issue 2: Interaction between input sources switching (“Language and Region”) and setxbkmap
+ - https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/issues/187
  - https://discourse.gnome.org/t/keyboard-map-related-issue-2-interaction-between-input-sources-switching-language-and-region-and-setxbkmap/2130
  - https://gitlab.gnome.org/GNOME/gnome-control-center/issues/782
  - https://askubuntu.com/questions/1187782/why-set-setxkbdmap-work-differently-from-the-gui-keyboard-map-switcher-super-sp
