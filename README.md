@@ -116,10 +116,6 @@ If you want to try this approach, see
  - XmodmapFollow.pl here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/scripts/XmodmapFollow.pl  
  - and the enD/enT files here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/tree/master/maps/
  
- # Links
- 
- - xfe has a per-window keyboard switcher: https://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
- 
 This is much quicker and more reliable than Approach 1.
 
 # Links
@@ -135,3 +131,8 @@ A similar approach, but with a fixed keyboard.
 Some comments on xkb:
 - https://medium.com/@daniel.jozsef/the-bazaar-with-landmines-or-how-to-extend-xkb-the-right-way-b82de59a1f9a
 
+
+ ## xfce
+ 
+ - xfce has a per-window keyboard switcher: https://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
+ 
