@@ -103,7 +103,7 @@ Keyboard-map related issue: Interaction between __input sources__ switching (“
 
 I've also asked via IRC. I hope that I can get this resolved via the above posts/irc... 
 
-Note: The __Hyper__ key issue has now been fixed, see [Hyper key.md](Hyper key.md).
+Note: The __Hyper__ key issue has now been fixed, see [Hyper key.md](Hyper%20key.md).
 
 ### Appraoch 4: XmodmapFollow with setxkbmap
 
