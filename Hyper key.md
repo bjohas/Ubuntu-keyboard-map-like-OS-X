@@ -13,4 +13,4 @@ This has now been fixed. Here's what the problem was:
 
 There's probably a better solution by understanding xkb from the ground up. However, moving the Hyper_L/R binding to mod3 (leaving mod5 untouched) and then changing <HYPE> to Super seems to work.
 
-New kbd maps availalbe [here](maps).
+New kbd maps availalbe [here](maps). Look for changes made 2019-11-18 to see exactly what changed.
