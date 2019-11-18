@@ -5,6 +5,11 @@ xkb_symbols "basic" {
     name[Group1]= "enHT (English, US, Hyper-Terminal)";
 
     key <LSGT> { [     grave,    asciitilde      ]     };
+    key <TLDE> { [sterling, EuroSign] };
+
+    // replace physical <HYPR> key with Super.
+    // Laptop keyboard doesn't have <HYPR> but whatever is on HYPR is added to Mod4 below, so has to be Super.
+    replace key <HYPR> { [ Super_L, Super_L] };
 
     key <CAPS> { [ Control_L, Control_L ] };
     // shift
@@ -12,11 +17,15 @@ xkb_symbols "basic" {
     replace key <LWIN> { [ Alt_L, Meta_L ] };
     replace key <LALT> { [ Hyper_L, Hyper_L ] };
     // space
-    replace key <RALT> { [ Control_R, Control_R ] };
-    replace key <RCTL> { [ Hyper_R, Hyper_R ] };
+    replace key <RALT> { [ Hyper_R, Hyper_R ] };
+    replace key <RCTL> { [ Control_R, Control_R ] };
     // Modifiers
+    modifier_map Control { <CAPS>, <RCTL> };
     modifier_map Mod1    { <LWIN> };
+    modifier_map Mod3    { <RALT>, <LALT> };
     modifier_map Mod4    { <LCTL> };
-    modifier_map Mod5    { <LALT>, <RCTL> };
-    modifier_map Control { <CAPS>, <RALT> };
+    // Best to leave mod2/mod5 alone:	
+    // mod2        Num_Lock (0x4d)
+    // mod5        ISO_Level3_Shift (0x5c),  Mode_switch (0xcb)
+    // If you want to use those, you'd have to go into us(basic) and stop them being assigned.
 };
