@@ -94,16 +94,7 @@ I then searched for a terminal programme that had the ability to remap modifier 
 
 I then found that the settings (under languages) allows for different layouts per window. This requires xkb. So I developed the xkb files that are in this repo. I initially posed that as a question (here: https://askubuntu.com/questions/1187610/reassigning-modifier-keys-with-xkb/1187783) but also contacted a number of people on github that had done xkb work, and thus arrived at the files here (with some input from @repolho). The problem now is that while the maps work with setxkbmap, with the GUI they don't. 
 
-Here are the two issues posted on various forums:
-
-Keyboard-map related issue: __hyper key__ not working in gsettings for “org.gnome.desktop.wm.keybindings *window/app*”
- - https://unix.stackexchange.com/questions/552680/why-does-hypertab-not-work-tested-in-ubuntu-gnome-and-xfce
- - https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/issues/186
- - https://discourse.gnome.org/t/keyboard-map-related-issue-hyper-key-not-working-in-gsettings-for-org-gnome-desktop-wm-keybindings-window-app/2129
- - https://gitlab.gnome.org/GNOME/gnome-control-center/issues/778
- - https://askubuntu.com/questions/1188046/setting-gnome-window-switching-to-hyper-doesnt-work
-
-Keyboard-map related issue 2: Interaction between __input sources__ switching (“Language and Region”) and setxbkmap
+Keyboard-map related issue: Interaction between __input sources__ switching (“Language and Region”) and setxbkmap
  - https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/issues/187
  - https://discourse.gnome.org/t/keyboard-map-related-issue-2-interaction-between-input-sources-switching-language-and-region-and-setxbkmap/2130
  - https://gitlab.gnome.org/GNOME/gnome-control-center/issues/782
@@ -111,6 +102,8 @@ Keyboard-map related issue 2: Interaction between __input sources__ switching (�
  - https://askubuntu.com/questions/1187782/why-set-setxkbdmap-work-differently-from-the-gui-keyboard-map-switcher-super-sp
 
 I've also asked via IRC. I hope that I can get this resolved via the above posts/irc... 
+
+Note: The __Hyper__ key issue has now been fixed, see [Hyper key.md]
 
 ### Appraoch 4: XmodmapFollow with setxkbmap
 
