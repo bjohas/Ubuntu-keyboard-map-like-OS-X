@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+$verbose = $ARGV[0];
+
 &keybindings("switch-applications","Hyper;Control","Tab");
 &keybindings("switch-group","Hyper;Control","grave");
 
@@ -25,6 +27,9 @@
 
 sub gsettings() {
     system("gsettings","set",$_[0],$_[1],$_[2]);
+    if ($verbose) {
+	print("gsettings set $_[0] $_[1] \"$_[2]\"\n");
+    };
 };
 
 sub keybindings() {
@@ -45,8 +50,8 @@ sub keybindings() {
 	};
 	my $string = "[".join(",",@x) ."]";
 	my $stringb = "[".join(",",@y) ."]";
-	gsettings("org.gnome.desktop.wm.keybindings",$a,$string);
-	gsettings("org.gnome.desktop.wm.keybindings","$a-backward",$stringb);
+	&gsettings("org.gnome.desktop.wm.keybindings",$a,$string);
+	&gsettings("org.gnome.desktop.wm.keybindings","$a-backward",$stringb);
 	#print "gsettings set org.gnome.desktop.wm.keybindings $a \"$string\"\n";
 	#print "gsettings set org.gnome.desktop.wm.keybindings $a-backward \"$stringb\"\n";
     };
