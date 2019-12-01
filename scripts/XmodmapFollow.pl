@@ -1,7 +1,11 @@
 #!/usr/bin/perl
 
 $sleeptime = 0.1;
+
+# $tcolor = "#380C2A"; $tcolor = "#00AAAA"; $tcolor = "#001133"; $tcolor = "#EEEEFF"; $tcolor = "#CCCCDD"; $tcolor = "#FFFFDD";
 $tcolor = "#CCCCAA";
+
+# $dcolor = "#303A3A"; $dcolor = "#005A6C"; $dcolor = "#004A5C";
 $dcolor = "#003A4C";
 
 $res = "$ENV{HOME}/bin/res";
@@ -50,9 +54,9 @@ Restarting shortly.
     # Immediate restarting wasn't a good idea, so 
     for ($x=0;$x<5;$x++) {
 	&dashToDock("#AA0000");
-	sleep 1;
+	sleep 0.5;
 	&dashToDock("#0000AA");
-	sleep 1;
+	sleep 0.5;
     };
     &dashToDock("#AA0000");
     print "Restarting ...\n";
@@ -64,14 +68,26 @@ sub dashToDock() {
     return;
 };
 
+sub pullMap() {
+    my $str = `xmodmap -pke | grep Hyper`;
+    if ($str =~ m/keycode\s+64/) {
+	print "Verified: Terminal\n";
+    } elsif ($str =~ m/keycode\s+66/) {
+	print "Verified: Desktop\n";
+    } else {
+	print "Unknown map.\n";
+    };
+};
+
 sub updateStatus() {
     print "\n\n-------- ",`date`;
     print "\n";
     if ($oldwpid eq "") {
 	print "First run.\n";
     };
-    print "getwindowpid -> $_\n" if $verbose;
+    # print "getwindowpid -> $_\n" if $verbose;
     print "WindowPid changed: $_\n" if $verbose;
+    print "Old WindowPid: $oldwpid\n" if $verbose;
     print "-- getwindowfocus:\n" if $verbose;
     ($f = `xdotool getwindowfocus`) =~s/\n//;
     print "-- getwindowfocus = $f\n" if $verbose;
@@ -92,6 +108,8 @@ sub updateStatus() {
     };
     if ($prevmode ne $currentmode || $prevmode eq "") {
 	if ($currentmode eq "t") {
+	    print "changed!!\n";
+	    print "WindowPID $_\n";
 	    # We've newly arrived in 'terminal mode'
 	    print "\nSwitch to terminal\n" if $verbose;
 	    sleep $sleeptime;
@@ -105,10 +123,7 @@ sub updateStatus() {
 		# Alternatively you can do put the map elsewhere (i.e. into $res) and then do this:
 		# system "xkbcomp $res/enT $ENV{DISPLAY}";
 	    };
-	    print "gsetting\n" if $verbose;
-	    # There are a few keyboard settings we also want to adjust:
-	    system "gsettings set org.gnome.desktop.wm.keybindings switch-windows \"['<Hyper>Tab']\"";
-	    system "gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward \"['<Hyper><Shift>Tab']\"";
+	    # &pullMap();
 	    # As the switching process is not very reliable, colour the dock to give user feedback:
 	    &dashToDock($tcolor);
 	} else {
@@ -123,15 +138,16 @@ sub updateStatus() {
 		system "setxkbmap enD";
 		# system "xkbcomp $res/enD $ENV{DISPLAY}";
 	    };
-	    print "gsetting\n" if $verbose;
-	    # There are a few keyboard settings we also want to adjust back:
-	    system "gsettings set org.gnome.desktop.wm.keybindings switch-windows \"['<Control>Tab']\"";
-	    system "gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward \"['<Control><Shift>Tab']\"";
-	    # (Seems you can use <Primary> instead of <Control> too.)
+	    # &pullMap();
 	    # As the switching process is not very reliable, colour the dock to give user feedback:
 	    &dashToDock($dcolor);
 	};
-    }
+    } else {
+	# print "\n\n-------- ",`date`;
+	## $prevmode == $currentmode || $prevmode eq ""
+	print "UNCHANGED: $prevmode\n";
+	print "WindowPID $_\n";
+    };
     $oldwpid = $_;
     # We're also using autokey to provide actions for Hyper-a/e/d/k etc (emulating Ctrl-a/e/d/k etc on the desktop).
     # As autokey sometimes misbehaves, let's check autokey occasionally.
@@ -152,3 +168,4 @@ sub updateStatus() {
 	&dashToDock("#AA0055");
     };
 };
+
