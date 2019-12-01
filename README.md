@@ -115,6 +115,8 @@ If you want to try this approach, see
  
 This is much quicker and more reliable than Approach 1.
 
+Important: Ubuntu 19.10. At leasts on Ubuntu 19.10, if you are using gnome-tweaks and have used it poreviously to remap you controil key, make sure that you deselect the ctrl-key remapping. It seems to interfere with approach 4.
+
 # Links
  
- See Useful Links.md
+ See [Useful Links.md](Useful Links.md).
