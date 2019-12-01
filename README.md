@@ -112,8 +112,10 @@ As setxkbmap is much faster in applying new keyboard maps than xmodmap, I've put
 If you want to try this approach, see 
  - XmodmapFollow.pl here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/scripts/XmodmapFollow.pl  
  - and the enD/enT files here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/tree/master/maps/
- 
-This is much quicker and more reliable than Approach 1.
+
+You will also want to adjust your shortcut keys. Initially, this was part of XmodmapFollow.pl. However, using multiple assignments for each combination, it was possible for me to not needing to change those per Window, see [setShortcutsGnome.pl](setShortcutsGnome.pl) on how to set this up.
+
+This is much quicker and more reliable than Approach 1. However, it still uses Xdotool, which doesn't seem to reliably detect all window switches and/or occasionally stops working altogether. 
 
 Important: Ubuntu 19.10. At leasts on Ubuntu 19.10, if you are using gnome-tweaks and have used it poreviously to remap you controil key, make sure that you deselect the ctrl-key remapping. It seems to interfere with approach 4.
 
