@@ -64,7 +64,7 @@ This changes the layout to
     ctrl
     SHIFT
     super FN alt hyper SPACE ctrl hyper
-Compared to the above map, it swaps ctrl and hyper (Note: Not quite for the xmodmap, but close enough, see comments below. Nonte also that I'm undecided about not swapping the keys to the right of SPACE, or maybe placing an alt key there. There are advantages/disadvantages to that.)
+Compared to the above map, it swaps ctrl and hyper (Note: Not quite for the xmodmap, but close enough, see comments below. Note also that I'm undecided about not swapping the keys to the right of SPACE, or maybe placing an alt key there. There are advantages/disadvantages to that.)
 
 The above keyboard layout is that one that I'm used to for the OS-X-terminal, and I can now bind the hyper key to other OS-X-type functions that I might want: Chiefly 
  - x/c/v for copy/cut/paste (via autokey, so that it works in xemacs too), as well as e.g. 
@@ -101,19 +101,19 @@ Keyboard-map related issue: Interaction between __input sources__ switching (“
  - https://askubuntu.com/questions/1187790/xkbmap-works-with-setxkbmap-but-not-in-gui
  - https://askubuntu.com/questions/1187782/why-set-setxkbdmap-work-differently-from-the-gui-keyboard-map-switcher-super-sp
 
-I've also asked via IRC. I hope that I can get this resolved via the above posts/irc... 
+I've also asked via IRC. I hope that I can get this resolved via the above posts/irc... (update 2019-12-01) ... which unfortuntaly hasn't led to conclusive answers, except for some hints on the __Hyper__ key issue, which has now been fixed, see [Hyper key.md](Hyper%20key.md).
 
-Note: The __Hyper__ key issue has now been fixed, see [Hyper key.md](Hyper%20key.md).
+The problem seems to be developing a working xkbmap. On Ubuntu 19.04, the provess of copying enT/enD to the xkb directory and modifying evdev.xml showed the maps in the switcher, although they didn't work. However, on Ubuntu 19.10, the maps do not show in the switcher. From reading various articles, it seems that xkbmap isn't very user configurable; to get our maps to work, we'll either need to rebuild xkb, or perhaps figure out what configuration files are missing to make this work.
 
 ### Appraoch 4: XmodmapFollow with setxkbmap
 
 As setxkbmap is much faster in applying new keyboard maps than xmodmap, I've put setxkbmap into XmodmapFollow. At least the keyboard switching is faster now, despite the bugs of xdotool.
 
 If you want to try this approach, see 
- - XmodmapFollow.pl here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/scripts/XmodmapFollow.pl  
- - and the enD/enT files here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/tree/master/maps/
+ - XmodmapFollow.pl here: [XmodmapFollow.pl](scripts/XmodmapFollow.pl)
+ - and the enD/enT files here: [maps](maps)
 
-You will also want to adjust your shortcut keys. Initially, this was part of XmodmapFollow.pl. However, using multiple assignments for each combination, it was possible for me to not needing to change those per Window, see [setShortcutsGnome.pl](setShortcutsGnome.pl) on how to set this up.
+You will also want to adjust your shortcut keys. Initially, this was part of XmodmapFollow.pl. However, using multiple assignments for each combination, it was possible for me to not needing to change those per Window, see [setShortcutsGnome.pl](scripts/setShortcutsGnome.pl) on how to set this up.
 
 This is much quicker and more reliable than Approach 1. However, it still uses Xdotool, which doesn't seem to reliably detect all window switches and/or occasionally stops working altogether. 
 
@@ -121,4 +121,4 @@ Important: Ubuntu 19.10. At leasts on Ubuntu 19.10, if you are using gnome-tweak
 
 # Links
  
- See [Useful Links.md](Useful Links.md).
+ See [Useful Links.md](Useful%20Links.md).
