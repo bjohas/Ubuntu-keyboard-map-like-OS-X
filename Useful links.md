@@ -15,3 +15,6 @@ Some comments on xkb:
  
  - xfce has a per-window keyboard switcher: https://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
  
+## Discussion elsewhere
+
+- https://askubuntu.com/questions/368437/how-do-i-remap-my-ubuntu-keyboard-shortcuts-to-match-osx
