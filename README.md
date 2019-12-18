@@ -121,4 +121,4 @@ Important: Ubuntu 19.10. At leasts on Ubuntu 19.10, if you are using gnome-tweak
 
 # Links
  
- See [Useful Links.md](Useful%20Links.md).
+ See [Useful links.md](Useful%20links.md).
