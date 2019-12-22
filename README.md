@@ -105,13 +105,31 @@ I've also asked via IRC. I hope that I can get this resolved via the above posts
 
 The problem seems to be developing a working xkbmap. On Ubuntu 19.04, the provess of copying enT/enD to the xkb directory and modifying evdev.xml showed the maps in the switcher, although they didn't work. However, on Ubuntu 19.10, the maps do not show in the switcher. From reading various articles, it seems that xkbmap isn't very user configurable; to get our maps to work, we'll either need to rebuild xkb, or perhaps figure out what configuration files are missing to make this work.
 
+#### Progress!!
+
+With the help of the people at https://github.com/xkbcommon/libxkbcommon, I made some progress. (Note: https://github.com/xkbcommon/libxkbcommon is not Xorg, but it is an implementation of XKB extracted from Xorg; it's used by Wayland Desktops and others. However, the people know their stuff, and had the following important observation.)
+
+In evdev.xml I had declared `enT` to be a variant of the `us` layout. When this is selected in the GUI, you see thiswith  `setxkbmap -print`:
+```
+keycodes: evdev+aliases(qwerty)
+types:    complete
+compat:   complete
+symbols:  pc+us(enT)+inet(evdev)
+```
+The `us(enT)` that the `enT` xkb_symbols section is searched for in the "/usr/share/X11/xkb/symbols/us" file. However, I had put them into a separate file (`enT`). The upshot is that the keymap is not found. 
+
+The solution is to place the new maps into the `us` file. See updated repository here:
+- [maps](maps)
+-- `us`: The amended `us` keymap. Look at the end to see the new entries.
+-- `evdev.xml`: The amended `evdev.xml`; search for hyper.
+
 ### Appraoch 4: XmodmapFollow with setxkbmap
 
 As setxkbmap is much faster in applying new keyboard maps than xmodmap, I've put setxkbmap into XmodmapFollow. At least the keyboard switching is faster now, despite the bugs of xdotool.
 
 If you want to try this approach, see 
  - XmodmapFollow.pl here: [XmodmapFollow.pl](scripts/XmodmapFollow.pl)
- - and the enD/enT files here: [maps](maps)
+ - and the enD/enT files here: [maps/v1](maps/v1)
 
 You will also want to adjust your shortcut keys. Initially, this was part of XmodmapFollow.pl. However, using multiple assignments for each combination, it was possible for me to not needing to change those per Window, see [setShortcutsGnome.pl](scripts/setShortcutsGnome.pl) on how to set this up.
 
