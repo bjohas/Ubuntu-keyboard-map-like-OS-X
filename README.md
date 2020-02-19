@@ -29,6 +29,17 @@ For me, it was quite natural to move the Ubuntu-control key next to the spacebar
 
 I started to explore this "OS X to Ubuntu while preserving muscle memory" quest on the forums, but without much luck (self-answere questions: https://askubuntu.com/questions/1150482/ubuntu-desktop-with-bash-keyboard-shortcuts/1187814, https://askubuntu.com/questions/1160090/xmodmap-and-keyboard-shortcuts-how-does-the-system-work-19-04-xorg). It seems kinda obvious to me that people might move from OS X to Ubuntu or vice versa. Or that one would want to get a consistent use of the Ctrl key across Ubuntu. However, this was difficult to find (as the many posts show).
 
+### Description
+
+To get the OS X layout, I've moved the control key nex to space (where the apple/command key would be). For most desktop apps, the behaviour (muscle memory) is now like a Mac. Let's call this key 'thumb'. So in the browser 'thumb-t' opens a new tab, 'thumb-a' selects all etc. So that's great. However, in OS X, you can use the Ctrl-key throughout (Cocoa) for going to the beginning of the line, end of line, cut etc. Let's call this key 'pinky'. I've used autokey to implement those functions, and mapped this to Hyper, physically located where I would expect 'pinky' to be. So now, pinky-a takes me to the beginning of the line, end of line etc etc. So now, my ubuntu desktop works like a mac desktop: I can use thumb and pinky like I would on a mac.
+
+The problem is then just the terminal, where on Ubuntu, ctrl works differently from the Desktop, but where on Mac, it works the same. So what I do in terminal, is I move control to the 'pinky' position. That means, as before, I can now do pinky-a, pinky-e, etc etc. So that's great. However, 'thumb' now doesn't work: On Mac, I can still do thumb-x/c/v to cut/paste etc. So what I do is to move Hyper to the thumb position, and then use autokey again to map common commands.
+(In case you're interested, the autokey commands are all described here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/autokey%20scripts.md)
+
+So, this works all pretty simply - and perfectly emulates the Mac Desktop on Ubuntu. The only caveat is that you need to switch the Hyper and Ctrl keys around: The usual position for everything bar Terminal, and swapped round for Terminal.
+(Btw., the reason I have used Hpyer but haven't used Super is because Super has default roles in Ubuntu. I'm actually using the Caps-Lock key as 'pinky')
+
+### Implementing this
 So, how far can we get with this? As just noted, placing the Ubuntu-Ctrl key next to space helps. However, the OS-X-ctrl key works - for many OS-X-applications - works like the Ubuntu-terminal ctrl key. However, clearly this doesn't work on the Ubuntu desktop. (Strange to think that OS X has a consistent set of keybindings across desktop and terminal, while Ubuntu doesn't.) The way to fix this is to use the Ubuntu-Hyper key, which doesn't seem to be widely used. By placing the Ubuntu-Hyper key where you expect your OS-X-ctrl key, you can then create additional functions (e.g., in autokey) that emulate the OS-X-Desktop behaviour.
 
 In this repo, try
@@ -89,6 +100,8 @@ However, Approach 4 below is much quicker and more reliable.
 ### Approach 2: Finding another terminal programme 
 
 I then searched for a terminal programme that had the ability to remap modifier keys (see https://unix.stackexchange.com/questions/549222/replacement-for-terminal-tilda-guake-terminator-but-with-modifier-key-r). That didn't lead to anything. uxrvt has a perl extension, that maybe would have made that possible.
+
+See discussion here: https://gitlab.gnome.org/GNOME/gnome-terminal/issues/220#note_716221
 
 ### Approach 3: Use the GUI settings
 
