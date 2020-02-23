@@ -22,7 +22,11 @@ Many keyboard shortcuts can be configured via Settings and more settings can be 
 
 However, this doesn't have all keyboard shortcuts. You can list all settings via gsettings, see gsettings-show.pl in this repo. In particular, the emoji key (set to ctrl+shift+e which conflices with Google Docs) took a bit of tracking down: 
 
-    gsettings-show.pl  | grep emoji
+    > gsettings-show.pl  | grep emoji
+    ...
+    org.freedesktop.ibus.panel.emoji hotkey ['<...>e']
+    ...
+    org.freedesktop.ibus.panel.emoji unicode-hotkey ['<...>u']
 
 (self-answered question here: https://unix.stackexchange.com/questions/534044/which-system-files-configure-global-keyboard-shortcuts/551458; also here https://unix.stackexchange.com/questions/532481/how-do-you-change-systems-wide-keyboard-short-cuts-on-the-commandline-e-g-shi).
 
