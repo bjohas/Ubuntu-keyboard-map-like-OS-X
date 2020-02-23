@@ -56,7 +56,7 @@ sudo ninja -C _build install
 Close gnome terminal, reopen.
 
 Now, finally you may want to adjust your preferences:
-![Gnome Terminal Preferences](https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/edit/master/Building a Gnome-Hyper-Terminal-Preferences.png)
+![Gnome Terminal Preferences](https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/edit/master/Building%20a%20Gnome-Hyper-Terminal-Preferences.png)
 
 
 
