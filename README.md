@@ -1,10 +1,20 @@
+# Switching from OS X to Ubuntu
+
+I switched to OS X nearly 20 years ago, because it offered a good set of desktop applications (like Adobe Creative Suite) but (the then new OS X) was based around Unix. So I felt, it gave me the best of both worlds. And indeed, I do think OS X is a great Unix-type system. It works smoothly and has a large user-base.
+
+I'd been using a range of Macs, and eventually a MacBook Air (2011). I had been meaning to replace it, but was held back by their endless keyboard troubles. In late 2018, the new MacBook Air came out (with an apparently improved keyboard), so I bought one. Within two weeks, the keyboard failed. So that machine went back. In April 2019, my old MacBook Air (2011) went up in a puff of smoke, forcing my hand. (The SSD stayed intact, and I migrated data to a MacMini 2012.) 
+
+So, in April 2019, I decided to switch away from OS X. As opposed to 20 years ago (when I used many Mac Desktop applications, like Final Cut, Shake, etc etc, and Adobe), I'm now mainly Chrome/Google Drive-based. So my first idea was to use a Chromebook, which have a linux sub-system. There were really two issues with this. One was that the build-quality of the (£500-ish) Chromebooks I tried wasn't all that great, especially the trackpads were a bit ropy. Obviously, the Chromebook market is changing quickly, and it may not be possible to get better machines. But at the time, to get a Chromebook that supported linux and had decent built quality didn't quite work for me. However, the other big issues was the keyboard. Chrome is a two-modifer system, while OS X is a three modifier system. There are things you can do (see https://github.com/bjohas/kromos, https://github.com/bjohas/extra-keyboards-for-chrome-os) but in the end I came up against certain issues (such as the issue that redefining keyboard layouts would work for most keys, but there'd be some keys that seemed to be hard wired, such as speech input to ctrl-d). 
+
+Looking around, I could get a Lenovo Yoga 720 as a Grade A machine for around £500, which seemed like a good way to explore Ubuntu. Ubuntu brings greater flexibility regarding keyboards, but as it turns out, it was still a 10 month journey to actually get OS X keyboard replicated. It sounds simple in principle, but in practice, it was hard. 
+
 # Ubuntu keyboard map like OS X
 
-When switching from OS X to the Ubuntu desktop, you're essentially moving from a three-modifier system (command/alt/ctrl) to a two modifier system (ctrl/alt). 
+When switching from OS X to the Ubuntu desktop, you're essentially moving from a three-modifier system (command/alt/ctrl) to a two+1 modifier system (ctrl/alt + super). Super has a special role usually to do with rearranging windows etc. However, in OS X (especially if you use the Terminal) you cannot get away with using all three. In Ubuntu, you could. 
 
 ## Operating system and window manager
 
-These notes here were developed for Ubuntu 19.04, which uses gnome as the default desktop manager. Previous versions of ubuntu used other desktop managers, and some of these notes will not be applicable.
+These notes here were developed for Ubuntu 19.04/10.10, which uses gnome as the default desktop manager. Previous versions of ubuntu used other desktop managers, and some of these notes will not be applicable.
 
 ## Overall keyboard shortcuts: gsettings
 
