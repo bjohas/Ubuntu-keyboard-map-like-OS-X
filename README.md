@@ -10,11 +10,11 @@ Looking around, I could get a Lenovo Yoga 720 as a Grade A machine for around £
 
 # Ubuntu keyboard map like OS X
 
-When switching from OS X to the Ubuntu desktop, you're essentially moving from a three-modifier system (command/alt/ctrl) to a two+1 modifier system (ctrl/alt + super). Super has a special role usually to do with rearranging windows etc. However, in OS X (especially if you use the Terminal) you cannot get away with using all three. In Ubuntu, you could. 
+When switching from OS X to the Ubuntu desktop, you're essentially moving from a three-modifier system (command/alt/ctrl) to a two+1 modifier system (ctrl/alt + super). Super has a special role usually to do with rearranging windows etc. However, in OS X (especially if you use the Terminal) you cannot get away with using all three. In Ubuntu, you could just use ctrl/alt if you didn't have a Super key.
 
-## Operating system and window manager
+## Operating system and window manager: Ubuntu 19.04/19.10 with Gnome.
 
-These notes here were developed for Ubuntu 19.04/10.10, which uses gnome as the default desktop manager. Previous versions of ubuntu used other desktop managers, and some of these notes will not be applicable.
+These notes here were developed for Ubuntu 19.04/19.10, which uses gnome as the default desktop manager. Previous versions of ubuntu used other desktop managers, and some of these notes will not be applicable.
 
 ## Overall keyboard shortcuts: gsettings
 
