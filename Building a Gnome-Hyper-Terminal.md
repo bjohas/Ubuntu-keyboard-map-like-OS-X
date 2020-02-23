@@ -54,3 +54,7 @@ meson --reconfigure --prefix /usr/local/lib --libdir /usr/local/lib _build/
 sudo ninja -C _build install
 ```
 Close gnome terminal, reopen.
+
+
+
+
