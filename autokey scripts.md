@@ -1,25 +1,6 @@
-# Getting OS-X-Command+x/c/v to work in terminal
-
-On the Ubuntu desktop, the keyboard map places Ubuntu-control where OS-X-Command is. Thus you have the familiar OS-X-Command+x/c/v.
-
-In the Ubuntu Terminal, the keyboard map places Ubuntu-hyper where OS-X-Command is. The following autokey settings give you the familiar cut/copy/paste:
-
-OS-X: Command+x/c/v -> bind to Ubuntu: hyper+x/c/v
-
-    keyboard.send_keys("<ctrl>+<shift>+c")
-
-OS-X: Command+x/c/v -> bind to Ubuntu: hyper+x/c/v
-
-    keyboard.send_keys("<ctrl>+<shift>+v")
-
-OS-X: Command+x/c/v -> bind to Ubuntu: hyper+x/c/v
-
-    keyboard.send_keys("<ctrl>+<shift>+x")
-    
-    
 # Getting OS-X-Ctrl+a/e/d/k to work on the desktop
 
-In the Ubuntu Terminal, OS-X-Ctrl+a/e/d/k works like Ubuntu-Ctrl+a/e/d/k. The keyboard map places Ubuntu-Ctrl where OS-X-Ctrl is, so you have the familiar ctrl-commands.
+In the Ubuntu Terminal, OS-X-Ctrl+a/e/d/k works like Ubuntu-Ctrl+a/e/d/k. The keyboard map (described in this repo, or set via Gnome Tweaks) places Ubuntu-Ctrl where OS-X-Ctrl is, so you have the familiar ctrl-commands.
 
 On the Ubuntu desktop, the keyboard map places Ubuntu-hyper where OS-X-Control. The following autokey settings give you a few of the familiar Ctrl commands.
 
@@ -68,3 +49,22 @@ Apple: Command+} --> bind to Ubuntu: hyper+}
 A full screen command can be bound, e.g. to Hyper+f as follows:
 
     keyboard.send_key("<f11>")
+
+# Getting OS-X-Command+x/c/v to work in terminal
+
+On the Ubuntu desktop, the keyboard map places Ubuntu-control where OS-X-Command is. Thus you have the familiar OS-X-Command+x/c/v.
+
+In the Ubuntu Terminal, the keyboard map places Ubuntu-hyper where OS-X-Command is. The following autokey settings give you the familiar cut/copy/paste:
+
+OS-X: Command+x/c/v -> bind to Ubuntu: hyper+x/c/v
+
+    keyboard.send_keys("<ctrl>+<shift>+c")
+
+OS-X: Command+x/c/v -> bind to Ubuntu: hyper+x/c/v
+
+    keyboard.send_keys("<ctrl>+<shift>+v")
+
+OS-X: Command+x/c/v -> bind to Ubuntu: hyper+x/c/v
+
+    keyboard.send_keys("<ctrl>+<shift>+x")
+    
