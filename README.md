@@ -1,5 +1,9 @@
 # Switching from OS X to Ubuntu
 
+If you just want to know how to do this in practice, see description here: https://docs.google.com/document/d/1ofEZURMDOcRoJTc6YF6MBV3aZ71DxQ-sxyHkfbNizuQ/edit?hl=en#. If you're interested in the pros/cons/journey, read on.
+
+## Background
+
 Having using Windows on a laptop but Unix-systems for work, I switched to OS X nearly 20 years ago, because it offered a good set of desktop applications (like Adobe Creative Suite) while it was also was based around Unix (i.e., the then-new OS X). This gave me the best of both worlds: Desktop apps like Final Cut Pro, but also access to the Terminal. And indeed, I do think OS X is a great Unix-type system. It works smoothly and has a large user-base. However, having come from Unix systems (including SunOS) I had always mapped the CapsLock key to control, with things like like ctrl-a, ctrl-d deeply embedded in muscle memory. Switching to OS X allowed me to retain this: The apple/command key controls window/application functions (like new window) while the ctrl key works (for Terminal, and many other apps) as expected in a Terminal. So that really worked.
 
 I'd been using a range of Macs (both Power PC and Intel, MacBook and MacBook Pro), and eventually a MacBook Air (2011). I had been meaning to replace it, but was held back by their endless keyboard troubles. In late 2018, the new MacBook Air came out (with an apparently improved keyboard), so I bought one. Within two weeks, parts of the keyboard become unreliable in the same way as what happened for other keyboards. The 'new improved' keyboard was once again a failure. So that machine went back. In April 2019, my old MacBook Air (2011) went up in a puff of smoke, forcing my hand. (The SSD stayed intact, and I migrated data to a MacMini 2012.) As even that MacBook Air had not been trouble-free (e.g., many battery replacements) I'd decided that it was time to look elsewhere.
