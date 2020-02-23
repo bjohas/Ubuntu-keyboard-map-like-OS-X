@@ -1,7 +1,7 @@
 Here's how to build a Gnome Terminal that uses Hyper instead of Ctrl.
 
 Thank you to Egmont Koblinger @egmontkob and Christian Persch @chpe: 
-https://gitlab.gnome.org/GNOME/gnome-terminal/issues/220#note_716221
+https://gitlab.gnome.org/GNOME/gnome-terminal/issues/220
 
 On Ubuntu 19.10 (Gnome shell) install dependencies:
 ```
