@@ -55,8 +55,10 @@ sudo ninja -C _build install
 ```
 Close gnome terminal, reopen.
 
-Now, finally you may want to adjust your preferences:
-![Gnome Terminal Preferences](https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/edit/master/Building%20a%20Gnome-Hyper-Terminal-Preferences.png)
+If you use keyboard short-cuts, you may have set these to using Super/Hyper etc. If you're going for an OS X-type terminal experience, here's how. Given that Ctrl is now free up (as you're using Hyper), you can now use the Ctrl key in your preferences:
+
+![Gnome Terminal Preferences](https://raw.githubusercontent.com/bjohas/Ubuntu-keyboard-map-like-OS-X/master/Building%20a%20Gnome-Hyper-Terminal-Preferences.png)
+
 
 
 
