@@ -97,7 +97,11 @@ The above keyboard layout is that one that I'm used to for the OS-X-terminal, an
 
 So now you have two maps. How do you switch between them? 
 
-### Approach 1: XmodmapFollow with xmodmap
+### Approach 1. Switching keyboard maps with xdotool - workable, but very unreliable
+
+The idea here is to use xdotool to detect window changes and switch keyboard maps accordingly.
+
+#### Approach 1A: XmodmapFollow with xmodmap
 
 The file XmodmapFollow in this repo uses xdotool to detect window changes, and then uses the xmodmaps above to change layout. Turns out that this is very slow. Plus it inherits the bugs of xdotool, so it's really not very stable. (Self-answered question related to this: https://unix.stackexchange.com/questions/535033/executing-command-when-application-comes-to-the-foreground-ubuntu-19-04-x11.)
 
@@ -105,17 +109,29 @@ If you want to try this approach, see
  - XmodmapFollow.pl here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/scripts/XmodmapFollow.pl  
  - and the two Xmodmap files below: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/tree/master/maps/XmodmapFollow%20with%20xmodmap 
  
-However, Approach 4 below is much quicker and more reliable.
+However, Approach 1B below is much quicker and more reliable.
 
-### Approach 2: Finding another terminal programme 
+#### Appraoch 1B: XmodmapFollow with setxkbmap
 
-I then searched for a terminal programme that had the ability to remap modifier keys (see https://unix.stackexchange.com/questions/549222/replacement-for-terminal-tilda-guake-terminator-but-with-modifier-key-r). That didn't lead to anything. uxrvt has a perl extension, that maybe would have made that possible.
+As setxkbmap is much faster in applying new keyboard maps than xmodmap, I've put setxkbmap into XmodmapFollow. At least the keyboard switching is faster now, despite the bugs of xdotool.
 
-See discussion here: https://gitlab.gnome.org/GNOME/gnome-terminal/issues/220#note_716221
+If you want to try this approach, see 
+ - XmodmapFollow.pl here: [XmodmapFollow.pl](scripts/XmodmapFollow.pl)
+ - and the enD/enT files here: [maps/v1](maps/v1)
 
-### Approach 3: Use the GUI settings
+You will also want to adjust your shortcut keys. Initially, this was part of XmodmapFollow.pl. However, using multiple assignments for each combination, it was possible for me to not needing to change those per Window, see [setShortcutsGnome.pl](scripts/setShortcutsGnome.pl) on how to set this up.
 
-I then found that the settings (under languages) allows for different layouts per window. This requires xkb. So I developed the xkb files that are in this repo. I initially posed that as a question (here: https://askubuntu.com/questions/1187610/reassigning-modifier-keys-with-xkb/1187783) but also contacted a number of people on github that had done xkb work, and thus arrived at the files here (with some input from @repolho). The problem now is that while the maps work with setxkbmap, with the GUI they don't. 
+This is much quicker and more reliable than Approach 1. However, it still uses Xdotool, which doesn't seem to reliably detect all window switches and/or occasionally stops working altogether. 
+
+Important: Ubuntu 19.10. At least on Ubuntu 19.10, if you are using gnome-tweaks and have used it previously to remap you controil key, make sure that you deselect the ctrl-key remapping. It seems to interfere with approach 4.
+
+#### Conclusion: Not reliable.
+
+Switching keyboard maps with xdotool is workable, but very unreliable. Especially if you're switching between Terminal and another application regularly (e.g. to copy/paste) it fails quickly. Sometimes when it fails, it seems that e.g. the ctrl key 'gets stuck', i.e. just typing 'a' acts as 'ctrl-a' producing unexpected behaviours mid-flow. I set up a keyboard shortcut (Super-Backspace) via Autokey to reset and restart XmodmapFollow which would fix this. Basically, in an average day, I'd have to use this once or twice for sure, but many times perhaps 10 times a day or so. So not a reliable solution at all.
+
+### Approach 2: Use the GUI settings
+
+The Gnome settings (under languages) allow for different layouts per window. This requires xkb. So I developed the xkb files that are in this repo. I initially posed that as a question (here: https://askubuntu.com/questions/1187610/reassigning-modifier-keys-with-xkb/1187783) but also contacted a number of people on github that had done xkb work, and thus arrived at the files here (with some input from @repolho). The problem now is that while the maps work with setxkbmap, with the GUI they don't. 
 
 Keyboard-map related issue: Interaction between __input sources__ switching (“Language and Region”) and setxbkmap
  - https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/issues/187
@@ -146,19 +162,20 @@ The solution is to place the new maps into the `us` file. See updated repository
 -- `us`: The amended `us` keymap. Look at the end to see the new entries.
 -- `evdev.xml`: The amended `evdev.xml`; search for hyper.
 
-### Appraoch 4: XmodmapFollow with setxkbmap
+#### Still stuck (2020-02-23)
 
-As setxkbmap is much faster in applying new keyboard maps than xmodmap, I've put setxkbmap into XmodmapFollow. At least the keyboard switching is faster now, despite the bugs of xdotool.
+See here
+https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/issues/187#note_392832
 
-If you want to try this approach, see 
- - XmodmapFollow.pl here: [XmodmapFollow.pl](scripts/XmodmapFollow.pl)
- - and the enD/enT files here: [maps/v1](maps/v1)
+A write-up of the problem is available here: 
+https://docs.google.com/document/d/1KiZN0hBhohqUWo3UXJDx-VAKvlBvJ6y_YyUp5l2nxy0/edit
 
-You will also want to adjust your shortcut keys. Initially, this was part of XmodmapFollow.pl. However, using multiple assignments for each combination, it was possible for me to not needing to change those per Window, see [setShortcutsGnome.pl](scripts/setShortcutsGnome.pl) on how to set this up.
+### Approach 3: Finding another terminal programme: The approach that works!! 
 
-This is much quicker and more reliable than Approach 1. However, it still uses Xdotool, which doesn't seem to reliably detect all window switches and/or occasionally stops working altogether. 
+I then searched for a terminal programme that had the ability to remap modifier keys (see https://unix.stackexchange.com/questions/549222/replacement-for-terminal-tilda-guake-terminator-but-with-modifier-key-r). That didn't lead to anything. uxrvt has a perl extension, that maybe would have made that possible.
 
-Important: Ubuntu 19.10. At leasts on Ubuntu 19.10, if you are using gnome-tweaks and have used it poreviously to remap you controil key, make sure that you deselect the ctrl-key remapping. It seems to interfere with approach 4.
+However, following some discussions here: https://gitlab.gnome.org/GNOME/gnome-terminal/issues/220#note_716221, I was able to recompile the libraries needed for Gnome Terminal to get it to use the Hyper key (instead of control), see write up here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/Building%20a%20Gnome-Hyper-Terminal.md. 
+
 
 # Links
  
