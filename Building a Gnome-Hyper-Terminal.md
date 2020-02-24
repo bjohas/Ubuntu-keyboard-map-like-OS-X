@@ -59,7 +59,15 @@ If you use keyboard short-cuts, you may have set these to using Super/Hyper etc.
 
 ![Gnome Terminal Preferences](https://raw.githubusercontent.com/bjohas/Ubuntu-keyboard-map-like-OS-X/master/Building%20a%20Gnome-Hyper-Terminal-Preferences.png)
 
+# Resolving the ibus issue
+
+We believe that the following is a bug in ibus XOR gtk. If the keypress event contains GDK_HYPER_MASK as a modifier, gtk_im_context_filter_keypress() returns true, reporting that the IM handled the event, even though it did not, therefore it should return false.
+
+Background: We are working on modifying Gnome-Terminal / libvte-2.91.so.0 to enable Terminal-bespoke remapping of modifier keys. This is to facilitate OS X users to migrate to Ubuntu. (Discussion here: #220. Background and unsuccessful alternative approaches detailed here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/README.md).
+When we replace GDK_CONTROL_MASK by GDK_HYPER_MASK, the input method (ibus) reports that it handled the event that had Hyper as the modifier. When we use export GTK_IM_MODULE=xim, the Hyper modifier is passed as expected. This leads us to believe that this is bug in ibus or perhaps gtk.
 
 
+https://launchpad.net/ubuntu/+source/ibus/+bugs
+https://launchpad.net/ubuntu/+source/gtk+3.0/+bugs
 
 
