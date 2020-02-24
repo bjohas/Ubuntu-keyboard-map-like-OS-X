@@ -61,12 +61,14 @@ If you use keyboard short-cuts, you may have set these to using Super/Hyper etc.
 
 # Resolving the ibus issue
 
-We believe that the following is a bug in ibus XOR gtk. If the keypress event contains GDK_HYPER_MASK as a modifier, gtk_im_context_filter_keypress() returns true, reporting that the IM handled the event, even though it did not, therefore it should return false.
+For GDK_HYPER_MASK, gtk_im_context_filter_keypress() falsely reports that IM handled the event
+
+If the keypress event contains GDK_HYPER_MASK as a modifier, gtk_im_context_filter_keypress() returns true, reporting that the IM handled the event, even though it did not, therefore it should return false.
 
 Background: We are working on modifying Gnome-Terminal / libvte-2.91.so.0 to enable Terminal-bespoke remapping of modifier keys. This is to facilitate OS X users to migrate to Ubuntu. (Discussion here: #220. Background and unsuccessful alternative approaches detailed here: https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/README.md).
-When we replace GDK_CONTROL_MASK by GDK_HYPER_MASK, the input method (ibus) reports that it handled the event that had Hyper as the modifier. When we use export GTK_IM_MODULE=xim, the Hyper modifier is passed as expected. This leads us to believe that this is bug in ibus or perhaps gtk.
+When we replace GDK_CONTROL_MASK by GDK_HYPER_MASK, the input method (ibus) reports that it handled the event that had Hyper as the modifier. When we use export GTK_IM_MODULE=xim, the Hyper modifier is passed as expected. 
 
-Unfortunately I'm not sure whether this is an issue in ibus or gtk, so I'm reporting it in both places (as well as upstream). Apologies for the inconvenience caused by this. Many thanks for looking at this.
+We believe that this is a bug in ibus XOR gtk. Unfortunately I'm not sure whether this is an issue in ibus or gtk, so I'm reporting it in both places (as well as upstream). Apologies for the inconvenience caused by this. Many thanks for looking at this.
 
 I'll track updates here
 https://gitlab.gnome.org/GNOME/gnome-terminal/issues/220
@@ -74,7 +76,8 @@ and here
 https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/Building%20a%20Gnome-Hyper-Terminal.md
 so that people compinging Gnonme Terminal are aware of the status.
 
-https://launchpad.net/ubuntu/+source/ibus/+bugs
-https://launchpad.net/ubuntu/+source/gtk+3.0/+bugs
-https://bugs.launchpad.net/ibus
-https://launchpad.net/gtk
+Reported here:
+- https://bugs.launchpad.net/ubuntu/+source/ibus/+bug/1864561
+- https://bugs.launchpad.net/ubuntu/+source/gtk+3.0/+bug/1864562
+- https://github.com/ibus/ibus/issues/2187
+- https://gitlab.gnome.org/GNOME/gtk/issues/2468
