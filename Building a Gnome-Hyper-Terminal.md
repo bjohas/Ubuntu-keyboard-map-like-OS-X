@@ -81,3 +81,10 @@ Reported here:
 - https://bugs.launchpad.net/ubuntu/+source/gtk+3.0/+bug/1864562
 - https://github.com/ibus/ibus/issues/2187
 - https://gitlab.gnome.org/GNOME/gtk/issues/2468
+
+### A few more links
+
+- The thread that led to modification of Gnome terminal: https://gitlab.gnome.org/GNOME/gnome-terminal/issues/220
+- Request for Gnome tweaks to make the needed keyboard conf easier: https://gitlab.gnome.org/GNOME/gnome-tweaks/issues/277
+- Thread reporting the issue with multiple keymaps https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/issues/187#note_392832
+- Quick start doc on Google Docs https://docs.google.com/document/d/1ofEZURMDOcRoJTc6YF6MBV3aZ71DxQ-sxyHkfbNizuQ/edit?hl=en#
