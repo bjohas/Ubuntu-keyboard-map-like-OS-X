@@ -2,8 +2,12 @@
 
 $verbose = $ARGV[0];
 
-&keybindings("switch-applications","Hyper;Control","Tab");
-&keybindings("switch-group","Hyper;Control","grave");
+# With the use of the 'hyper key' modification to Gnome Terminal, the keyboard map switching is no longer needed and these are obsolete:
+#&keybindings("switch-applications","Hyper;Control","Tab");
+#&keybindings("switch-group","Hyper;Control","grave");
+# and replaced by this:
+&keybindings("switch-applications","Control","Tab");
+&keybindings("switch-group","Control","grave");
 
 &keybindings("switch-windows","Alt","Tab");
 &keybindings("cycle-windows","Super","Tab");
@@ -15,15 +19,22 @@ $verbose = $ARGV[0];
 &gsettings("org.gnome.shell.keybindings","toggle-message-tray","['<Super>m']");
 
 # org.gnome.shell.keybindings toggle-application-view ['<Super>a']
-&gsettings("org.gnome.shell.keybindings","toggle-application-view","['<Super>a','<Hyper>space']");
+&gsettings("org.gnome.shell.keybindings","toggle-application-view","['<Super>a','<Super>space','<Control>space']");
 
 # org.gnome.shell.keybindings toggle-overview ['<Super>s']
 
-&gsettings("org.gnome.shell.keybindings","toggle-overview","['<Super>s','<Shift><Hyper>space']");
-# org.gnome.desktop.wm.keybindings switch-input-source ['<Super>space']
-# org.gnome.desktop.wm.keybindings switch-input-source-backward ['<Shift><Super>space']
+&gsettings("org.gnome.shell.keybindings","toggle-overview","['<Super>s','<Shift><Super>space']");
+
+&gsettings("org.gnome.desktop.wm.keybindings","switch-input-source","['<Super>i']");
+&gsettings("org.gnome.desktop.wm.keybindings","switch-input-source-backward","['<Shift><Super>i']");
 # org.gnome.desktop.wm.keybindings close ['<Super>w']
 
+&gsettings("org.gnome.settings-daemon.plugins.media-keys","logout","['<Super>Delete']");
+
+&gsettings("org.freedesktop.ibus.panel.emoji","hotkey","['<Control><Alt><Shift>e']");
+&gsettings("org.freedesktop.ibus.panel.emoji","unicode-hotkey","['<Control><Shift>u']");
+
+&gsettings("org.gnome.desktop.wm.keybindings","minimize","['<Super>h','<ctrl>m']");
 
 sub gsettings() {
     system("gsettings","set",$_[0],$_[1],$_[2]);
@@ -56,5 +67,3 @@ sub keybindings() {
 	#print "gsettings set org.gnome.desktop.wm.keybindings $a-backward \"$stringb\"\n";
     };
 };
-
-
