@@ -68,3 +68,22 @@ OS-X: Command+x/c/v -> bind to Ubuntu: hyper+x/c/v
 
     keyboard.send_keys("<ctrl>+<shift>+x")
     
+# Autokey tips
+
+      Scripting · autokey/autokey Wiki
+      https://github.com/autokey/autokey/wiki/Scripting
+
+      Dynamic Phrases, Using Macros as placeholders in Phrases · autokey/autokey Wiki
+      https://github.com/autokey/autokey/wiki/Dynamic-Phrases,-Using-Macros-as-placeholders-in-Phrases
+
+      FAQ · autokey/autokey Wiki
+      https://github.com/autokey/autokey/wiki/FAQ
+
+      API Documentation
+      https://autokey.github.io/index.html
+
+      Special Keys · autokey/autokey Wiki
+      https://github.com/autokey/autokey/wiki/Special-Keys
+
+      API Examples · autokey/autokey Wiki
+      https://github.com/autokey/autokey/wiki/API-Examples
