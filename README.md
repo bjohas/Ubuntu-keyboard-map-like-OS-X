@@ -1,6 +1,8 @@
 # Switching from OS X to Ubuntu
 
-If you just want to know how to do this in practice, see description here: https://docs.google.com/document/d/1ofEZURMDOcRoJTc6YF6MBV3aZ71DxQ-sxyHkfbNizuQ/edit?hl=en#. If you're interested in the pros/cons/journey, read on.
+If you just want to know how to do this in practice, see description here: https://docs.google.com/document/d/1ofEZURMDOcRoJTc6YF6MBV3aZ71DxQ-sxyHkfbNizuQ/edit?hl=en# or here https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/Migrating%20from%20OS%20X%20to%20Ubuntu%202020-02-28.pdf
+
+If you're interested in the pros/cons/journey, read on.
 
 ## Background
 
