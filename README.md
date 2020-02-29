@@ -1,6 +1,8 @@
 # Switching from OS X to Ubuntu
 
-If you just want to know how to do this in practice, see description here: https://docs.google.com/document/d/1ofEZURMDOcRoJTc6YF6MBV3aZ71DxQ-sxyHkfbNizuQ/edit?hl=en# or here https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/Migrating%20from%20OS%20X%20to%20Ubuntu%202020-02-28.pdf
+If you just want to know how to do this in practice, see description here: 
+- https://docs.google.com/document/d/1ofEZURMDOcRoJTc6YF6MBV3aZ71DxQ-sxyHkfbNizuQ/edit?hl=en# or here 
+- https://github.com/bjohas/Ubuntu-keyboard-map-like-OS-X/blob/master/Migrating%20from%20OS%20X%20to%20Ubuntu%202020-02-28.pdf
 
 If you're interested in the pros/cons/journey, read on.
 
@@ -33,6 +35,8 @@ However, this doesn't have all keyboard shortcuts. You can list all settings via
     org.freedesktop.ibus.panel.emoji hotkey ['<...>e']
     ...
     org.freedesktop.ibus.panel.emoji unicode-hotkey ['<...>u']
+    ...
+    org.gnome.mutter overlay-key '...'
 
 (self-answered question here: https://unix.stackexchange.com/questions/534044/which-system-files-configure-global-keyboard-shortcuts/551458; also here https://unix.stackexchange.com/questions/532481/how-do-you-change-systems-wide-keyboard-short-cuts-on-the-commandline-e-g-shi).
 
@@ -50,6 +54,8 @@ For me, it was quite natural to move the Ubuntu-control key next to the spacebar
 I started to explore this "OS X to Ubuntu while preserving muscle memory" quest on the forums, but without much luck (self-answere questions: https://askubuntu.com/questions/1150482/ubuntu-desktop-with-bash-keyboard-shortcuts/1187814, https://askubuntu.com/questions/1160090/xmodmap-and-keyboard-shortcuts-how-does-the-system-work-19-04-xorg). It seems kinda obvious to me that people might move from OS X to Ubuntu or vice versa. Or that one would want to get a consistent use of the Ctrl key across Ubuntu. However, this was difficult to find (as the many posts show).
 
 ### Description
+
+**Spoiler:** You're better off reading this in the pdf posted above. Also, Approach 3 below works best. So spare yourself some reading on go there. :)
 
 To get the OS X layout, I've moved the control key nex to space (where the apple/command key would be). For most desktop apps, the behaviour (muscle memory) is now like a Mac. Let's call this key 'thumb'. So in the browser 'thumb-t' opens a new tab, 'thumb-a' selects all etc. So that's great. However, in OS X, you can use the Ctrl-key throughout (Cocoa) for going to the beginning of the line, end of line, cut etc. Let's call this key 'pinky'. I've used autokey to implement those functions, and mapped this to Hyper, physically located where I would expect 'pinky' to be. So now, pinky-a takes me to the beginning of the line, end of line etc etc. So now, my ubuntu desktop works like a mac desktop: I can use thumb and pinky like I would on a mac.
 
