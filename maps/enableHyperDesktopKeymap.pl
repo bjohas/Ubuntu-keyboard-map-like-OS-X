@@ -1,23 +1,8 @@
 #!/usr/bin/perl
 use warnings;
 use strict;
-use open IO => ':encoding(UTF-8)', ':std';
-use utf8;
 use feature qw{ say };
 use 5.18.2;
-use String::ShellQuote;
-#$string = shell_quote(@list);
-my $home = $ENV{HOME};
-(my $date = `date +'%Y-%m-%d_%H.%M.%S'`) =~ s/\n//;
-my $help = "";
-my $string = "";
-my $number = "";
-use Getopt::Long;
-GetOptions (
-    "string=s" => \$string, 
-    "help" => \$help, 
-    "number=f" => \$number, 
-    ) or die("Error in command line arguments\n");
 
 my $keymap;
 my $evdevvar;
