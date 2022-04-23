@@ -23,7 +23,7 @@ So overall, hard to see how the remapping (which needs `autokey`) would work.
 The keymap switching approach (Approach 2 below) might now work in 22.04; the modified terminal (Approach 3) will definitely work, but still requires a manual compile of vte. Another approach would be for xkeysnail to remap ctrl/hyper between terminal/other; this would be really neat. However, `xkeysnail` at the time of writing doesn't support the Hyper key: https://github.com/rbreaves/kinto/issues/562.
 
 
-# Switching from OS X to Ubuntu
+# Switching from OS X to Ubuntu (Ubuntu 19.04/19.10/20.04 LTS)
 
 If you just want to know how to do this in practice, see description here: 
 - https://docs.google.com/document/d/1ofEZURMDOcRoJTc6YF6MBV3aZ71DxQ-sxyHkfbNizuQ/edit?hl=en# or here 
