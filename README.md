@@ -6,7 +6,7 @@ Ubuntu 21.10 and 22.04 LTS use Wayland by default, though you can continue using
 
 ## Improvements to xkb custom layouts
 
-These two blogpost detail a better system for customising the keyboard layout:
+These two blogposts detail a better system for customising the keyboard layout:
 * Wayland http://who-t.blogspot.com/2020/09/user-specific-xkb-configuration-putting.html. Peter Hutterer notes: "The below relies on software using libxkbcommon and libxkbregistry. At the time of writing, libxkbcommon is used by all mainstream Wayland compositors but not by the X server. libxkbregistry is not yet used because I'm typing this before we had a release for it. But at least now I have a link to point people to."
 * https://who-t.blogspot.com/2021/02/a-pre-supplied-custom-keyboard-layout.html. Peter Hutterer notes: "This Merge Request (scheduled for xkeyboard-config 2.33) adds a "custom" layout to the evdev.xml and base.xml files."
 
