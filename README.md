@@ -1,3 +1,28 @@
+# Update 2022-04-23
+
+The notes below were written for Ubuntu 19.04/19.10, but they work on Ubuntu 20.04 LTS as well. I've stayed on the LTS, but will upgrade to 22.04 LTS (which fixes bluetooth issues).
+
+Ubuntu 21.10 and 22.04 LTS use Wayland by default, though you can continue using Xorg.
+
+## Improvements to xkb custom layouts
+
+These two blogpost detail a better system for customising the keyboard layout:
+* Wayland http://who-t.blogspot.com/2020/09/user-specific-xkb-configuration-putting.html Peter Hutterer notes: "The below relies on software using libxkbcommon and libxkbregistry. At the time of writing, libxkbcommon is used by all mainstream Wayland compositors but not by the X server. libxkbregistry is not yet used because I'm typing this before we had a release for it. But at least now I have a link to point people to."
+* https://who-t.blogspot.com/2021/02/a-pre-supplied-custom-keyboard-layout.html eter Hutterer notes: "This Merge Request (scheduled for xkeyboard-config 2.33) adds a "custom" layout to the evdev.xml and base.xml files."
+
+I am not sure how to determine whether Ubuntu 22.04 has `xkeyboard-config 2.33`, but it does have `xkb-data 2.33-1`, so might be in luck there. Overall, this means that custom keyboard survive upgrades. Especially with `libxkbcommon` and `libxkbregistry` it's now possible to have try user-configured keyboard maps (i.e., stored in `$HOME`), which is great. So on Wayland, this is really good. However, even on Xorg, the `custom` file option is a big improvement.
+
+## Issues with Wayland
+
+I would expect the remainder of the tutorial to work under 22.04/Xorg. However, at the time of writing, tools like `xkeysnail` and `autokey` don't (fully?) support Wayland. In particular, the detecting the application (which is needed to apply the custom layout for Terminal) seems to be an issue.
+* https://github.com/mooz/xkeysnail/issues/108
+So overall, hard to see how the remapping (which needs `autokey`) would work.
+
+## Under Xorg
+
+The keymap switching approach (Approach 2 below) might now work in 22.04; the modified terminal (Approach 3) will definitely work, but still requires a manual compile of vte. Another approach would be for xkeysnail to remap ctrl/hyper between terminal/other; this would be really neat. However, `xkeysnail` at the time of writing doesn't support the Hyper key: https://github.com/rbreaves/kinto/issues/562.
+
+
 # Switching from OS X to Ubuntu
 
 If you just want to know how to do this in practice, see description here: 
