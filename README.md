@@ -12,7 +12,7 @@ These two blogposts detail a better system for customising the keyboard layout:
 
 I am not sure how to determine whether Ubuntu 22.04 has `xkeyboard-config 2.33`, but it does have `xkb-data 2.33-1`, [so might be in luck there](https://twitter.com/bjoernhassler/status/1517836599446228994). Overall, this means that you can have one custom keyboard that survives upgrades. Especially with `libxkbcommon` and `libxkbregistry` it's now possible to have try user-configured keyboard maps (i.e., stored in `$HOME`), which is great. So on Wayland, this is really good. However, even on Xorg, the `custom` file option is a big improvement.
 
-## Issues with Wayland
+## Wayland and `xkeysnail` / `autokey`
 
 I would expect the remainder of the tutorial to work under 22.04/Xorg. However, at the time of writing, tools like `xkeysnail` and `autokey` don't (fully?) support Wayland. In particular, the detecting the application (which is needed to apply the custom layout for Terminal) seems to be an issue.
 * https://github.com/mooz/xkeysnail/issues/108
