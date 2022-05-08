@@ -1,4 +1,4 @@
-Here's how to build a Gnome Terminal that uses Hyper instead of Ctrl.
+Here's how to build a Gnome Terminal that uses Hyper instead of Ctrl. Updated for Ubuntu 22.04.
 
 Thank you to Egmont Koblinger @egmontkob and Christian Persch @chpe: 
 https://gitlab.gnome.org/GNOME/gnome-terminal/issues/220
@@ -11,6 +11,21 @@ sudo apt install libpango1.0-dev
 sudo apt install libgnutls28-dev
 sudo apt install cmake
 sudo apt install gtk+-3.0
+sudo apt install libsystemd-dev
+sudo apt install gobject-introspection
+sudo apt install libgirepository1.0-dev
+sudo apt install valac
+sudo apt install gettext
+```
+On Ubuntu 22.04, some of those weren't found, so do this
+```
+sudo apt install build-essential libgtk-3-dev
+sudo apt install meson
+#sudo apt install glib2.0
+sudo apt install libpango1.0-dev
+sudo apt install libgnutls28-dev 
+sudo apt install cmake
+#sudo apt install gtk+-3.0
 sudo apt install libsystemd-dev
 sudo apt install gobject-introspection
 sudo apt install libgirepository1.0-dev
@@ -36,7 +51,11 @@ Replace with GDK_HYPER_MASK
 ```
 perl -pi.bak__$date -e 's/GDK_CONTROL_MASK/GDK_$ARGV[0]_MASK/' app/app.cc vte.cc vtegtk.cc keymap.cc
 ```
-One more edit: In vte.cc, comment out in vte.cc the 8 lines of code containing the "Keypress taken by IM" debug text. It's a single block of 8 lines, you'll see it. (Alternative: `export GTK_IM_MODULE=xim` before starting vte-2.91).
+One more edit: 
+```
+IMPORTANT: In vte.cc, comment out in vte.cc the 8 lines of code containing the "Keypress taken by IM" debug text. 
+```
+It's a single block of 8 lines, you'll see it. (Alternative: `export GTK_IM_MODULE=xim` before starting vte-2.91, if you just want to test).
 
 Now run
 ```
@@ -48,11 +67,17 @@ Now - if you're happy so far - let's adjust gnome terminal in the same way. (The
 ```
 ldd /usr/bin/gnome-terminal.real | grep vte
 ```
-Then run
+which (prob?) gave me `/usr/local/lib` on 19.10. However, on 22.04 I now get
+```
+ /usr/local/lib/x86_64-linux-gnu/
+ ```
+So, then run
 ```
 meson --reconfigure --prefix /usr/local/lib --libdir /usr/local/lib _build/
 sudo ninja -C _build install
 ```
+or use ` /usr/local/lib/x86_64-linux-gnu/`. (I accidentally did both on 22.04, but seems to work...)
+
 Close gnome terminal, reopen.
 
 If you use keyboard short-cuts, you may have set these to using Super/Hyper etc. If you're going for an OS X-type terminal experience, here's how. Given that Ctrl is now free up (as you're using Hyper), you can now use the Ctrl key in your preferences:
